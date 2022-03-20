@@ -57,12 +57,42 @@ main {
 
     .carousel {
         width: 70%;
-        // height: 150px;
+        height: 570px;
         margin: 0 auto;
         // padding-bottom: 60px;
         padding-top: 20px;
         padding-bottom: 80px;
+
+        .carousel-inner {
+
+            .carousel-item {
+                height: 100%;
+
+                img {
+                    // position: absolute;
+                    width: 100%;
+                }
+            }
+        }
     }
+
+    // @media (min-width: 320px) {
+    //     .carousel,
+    //     .carousel .item,
+    //     .carousel .item-mask,
+    //     .carousel-inner .item .item-mask img {
+    //       height:200px;
+    //     }
+    //   }
+      
+    //   @media (min-width: 768px) {
+    //     .carousel,
+    //     .carousel .item,
+    //     .carousel .item-mask,
+    //     .carousel-inner .item .item-mask img {
+    //       height:400px;
+    //     }
+    //   }
 
     .home-text {
         width: 70%;
@@ -289,50 +319,53 @@ footer {
         margin-left: 20px;
     }
 
-    .work-practice {
-        overflow:	hidden;
-        position: relative;
-        width: 31%;
-        height: 243px;
-
-        &:hover .mask {
-            opacity:		1;	/* マスクを表示する */
-        }
-
-        .mask {
-            width:			100%;
-            height:			100%;
-            position:		absolute;	/* 絶対位置指定 */
-            top:			0;
-            left:			0;
-            opacity:		0;	/* マスクを表示しない */
-            background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
-            -webkit-transition:	all 0.2s ease;
-            transition:		all 0.2s ease;
-            margin-left: 20px;
-
-            .caption {
-                font-size:		130%;
-                text-align: 		center;
-                padding-top:		80px;
-                color:			#fff;
-            }
-        }
-
-    }
-    
     .work-card {
-        margin-bottom: 50px;
-        width: 31%;
         display: flex;
         flex-wrap: wrap;
 
-        img {
-            width: 100%;
+        .work-box {
+            overflow:	hidden;
+            position: relative;
+            width: 31%;
             height: 243px;
-            margin-bottom: 40px;
-            margin-left: 20px;
+            margin-bottom: 50px;
+
+            &:hover .mask {
+                opacity:		1;	/* マスクを表示する */
+            }
+    
+            .mask {
+                width:			100%;
+                height:			100%;
+                position:		absolute;	/* 絶対位置指定 */
+                top:			0;
+                left:			0;
+                opacity:		0;	/* マスクを表示しない */
+                background-color:	rgba(135,206,250,0.6);	/* マスクは半透明 */
+                -webkit-transition:	all 0.2s ease;
+                transition:		all 0.2s ease;
+                margin-left: 20px;
+    
+                .caption {
+                    font-size:		110%;
+                    text-align: 		center;
+                    padding-top:		100px;
+                    color:			#fff;
+                    line-height: 25px;
+                }
+            }
+    
+            img {
+                width: 100%;
+                height: 243px;
+                margin-bottom: 40px;
+                margin-left: 20px;
+            }
         }
+    }
+
+    &:last-child {
+        margin-bottom: 80px;
     }
 }
 
