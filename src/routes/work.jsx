@@ -5,7 +5,7 @@ export default function Work() {
             <h1 class="work-margin">宿泊施設</h1>
             <div class="work-card work-practice">
                 <div class="work-box">
-                    <a href=""><img src="images/work01.jpg" alt=""/></a>
+                    <a href="detail01"><img src="images/work01.jpg" alt=""/></a>
                     <div class="mask">
                         <div class="caption">
                             {/* ⤴️<br/> */}

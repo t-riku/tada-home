@@ -370,6 +370,29 @@ footer {
 }
 
 
+// detail.html
+
+.detail-box {
+    width: 80%;
+    margin: 0 auto;
+
+    .detail-img {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+
+        img {
+            width: 32%;
+        }
+    }
+
+    .detail-text {
+        width: 30%;
+        font-size: 16px;
+    }
+}
+
+
 // magazine.html
 
 .magazine-title {

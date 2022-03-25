@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 import Magazine from './routes/magazine';
 import Philosophy from './routes/philosophy';
 import Work from './routes/work';
+import detail01 from './routes/detail01';
 import Profile from './routes/profile';
 import Overview from './routes/overview';
 import Flow from './routes/flow';
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="philosophy" element={<Philosophy />} />
         <Route path="work" element={<Work />} />
+        {/* <Route path="detail01" element={<Detail01 />} /> */}
         <Route path="magazine" element={<Magazine />} />
         <Route path="profile" element={<Profile />} />
         <Route path="overview" element={<Overview />} />
