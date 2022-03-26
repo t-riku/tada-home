@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import db from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { doc, collection, getDocs, onSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 // import { useEffect } from "react";
 
@@ -16,6 +16,11 @@ function App() {
     getDocs(postData).then((snapShot) => {
       // console.log(snapShot.docs.map((doc) => ({ ...doc.data() })));
       setPosts(snapShot.docs.map((doc) => ({ ...doc.data() })));
+    });
+
+    // リアルタイムで取得
+    onSnapshot(postData, (post) => {
+      setPosts(post.docs.map((doc) => ({...doc.data() })));
     })
   }, []);
 
