@@ -87,7 +87,7 @@ function App() {
               {posts.map((post) => (
                 <div class="news-box" key={post.title}>
                   <p class="time">{post.text}</p>
-                  <p class="news-list"><a>{post.title}</a></p>
+                  <p class="news-list"><a href="">{post.title}</a></p>
                 </div>
               ))}
             <a href="https://blog.arttada.com/"><img src="images/blog.png" alt=""/></a>
