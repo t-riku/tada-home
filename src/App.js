@@ -1,8 +1,26 @@
 import { Link } from "react-router-dom";
 import logo from './logo.svg';
+import db from "./firebase";
+import { collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+// import { useEffect } from "react";
+
 
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    // データベースからデータを取得する
+    const postData = collection(db, "posts");
+    getDocs(postData).then((snapShot) => {
+      // console.log(snapShot.docs.map((doc) => ({ ...doc.data() })));
+      setPosts(snapShot.docs.map((doc) => ({ ...doc.data() })));
+    })
+  }, []);
+
+
+
   return (
     <main>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -61,10 +79,16 @@ function App() {
 
         <div class="news">
             <h1>NEWS</h1>
-            <div class="news-box">
-                <p class="time">2021.7</p>
-                <p class="news-list"><a href="">三重県桑名市の木造音楽ホールが完成しました。</a></p>
-            </div>
+            {/* <div class="news-box"> */}
+                {posts.map((post) => (
+                  <div class="news-box" key={post.title}>
+                    <p class="time">{post.text}</p>
+                    <p class="news-list"><a>{post.title}</a></p>
+                  </div>
+                ))}
+                {/* <p class="time">2021.7</p>
+                <p class="news-list"><a href="">三重県桑名市の木造音楽ホールが完成しました。</a></p> */}
+            {/* </div> */}
             <div class="news-box">
                 <p class="time">2021.4</p>
                 <p class="news-list"><a href="">三重県桑名市の木造音楽ホールが上棟しました。　</a></p>
