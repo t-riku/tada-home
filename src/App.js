@@ -79,20 +79,12 @@ function App() {
 
         <div class="news">
             <h1>NEWS</h1>
-            {/* <div class="news-box"> */}
-                {posts.map((post) => (
-                  <div class="news-box" key={post.title}>
-                    <p class="time">{post.text}</p>
-                    <p class="news-list"><a>{post.title}</a></p>
-                  </div>
-                ))}
-                {/* <p class="time">2021.7</p>
-                <p class="news-list"><a href="">三重県桑名市の木造音楽ホールが完成しました。</a></p> */}
-            {/* </div> */}
-            <div class="news-box">
-                <p class="time">2021.4</p>
-                <p class="news-list"><a href="">三重県桑名市の木造音楽ホールが上棟しました。　</a></p>
-            </div>
+              {posts.map((post) => (
+                <div class="news-box" key={post.title}>
+                  <p class="time">{post.text}</p>
+                  <p class="news-list"><a>{post.title}</a></p>
+                </div>
+              ))}
             <a href="https://blog.arttada.com/"><img src="images/blog.png" alt=""/></a>
         </div>
 
